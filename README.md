@@ -9,6 +9,7 @@ If you decide to use orangepi with armbian on 3.5" tft screen (driver ili9486) y
 > Command:
 
 `git clone https://github.com/teacupx/orangepipc`
+
 `cd orangepipc`
 ### 2. Configure overlays
 > Command:
