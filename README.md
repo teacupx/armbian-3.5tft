@@ -21,7 +21,9 @@ overlays=spi-spidev spi-add-cs1
 param_spidev_spi_bus=0
 param_spidev_spi_cs=1
 ```
-.
+
+> Command:
+
 `sudo armbian-add-overlay foo.dts`
 
 ### 3. Configure modules
@@ -34,7 +36,9 @@ fbtft
 fbtft_device
 
 ```
-.
+
+> Command:
+
 `sudo nano /etc/modprobe.d/fbtft.conf` 
 > Add the following:
 ```
@@ -42,6 +46,7 @@ options fbtft_device rotate=90 name=piscreen speed=16000000 gpios=reset:2,dc:71 
 
 ```
 > Reboot:
+
  `sudo reboot` 
 
 ### 4. Configure X server
