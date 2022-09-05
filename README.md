@@ -50,9 +50,10 @@ options fbtft_device rotate=90 name=piscreen speed=16000000 gpios=reset:2,dc:71 
  `sudo reboot` 
 
 ### 4. Configure X server
-> Commands:
+> Command:
 
 `sudo apt-get install xserver-xorg-video-fbdev`
+
 `sudo nano /usr/share/X11/xorg.conf.d/99-fbdev.conf`
 > Put this in the file:
 ```
