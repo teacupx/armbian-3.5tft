@@ -18,7 +18,7 @@ If you decide to use orangepi with armbian on 3.5" tft screen (driver ili9486) y
 > Add the following lines to the end of the file:
 ```
 overlays=spi-spidev spi-add-cs1
-param_spidev_spi_bus=0
+param_spidev_spi_bus=0 # Change to 1 for h5
 param_spidev_spi_cs=1
 ```
 
@@ -26,7 +26,7 @@ param_spidev_spi_cs=1
 
 `sudo armbian-add-overlay overlays/<file>.dts`
 
-Where <file> is the most appropriate overlay for your device
+Where '<file>' is the most appropriate overlay for your device
 
 ### 3. Configure modules
 > Command:
