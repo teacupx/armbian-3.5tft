@@ -8,9 +8,9 @@ If you decide to use orangepi with armbian on 3.5" tft screen (driver ili9486) y
 ### Preliminary steps
 > Command:
 
-`git clone https://github.com/teacupx/orangepipc`
+`git clone https://github.com/teacupx/armbian-3.5tft`
 
-`cd orangepipc`
+`cd armbian-3.5tft`
 ### 2. Configure overlays
 > Command:
 
@@ -24,7 +24,9 @@ param_spidev_spi_cs=1
 
 > Command:
 
-`sudo armbian-add-overlay foo.dts`
+`sudo armbian-add-overlay overlays/<file>.dts`
+
+Where <file> is the most appropriate overlay for your device
 
 ### 3. Configure modules
 > Command:

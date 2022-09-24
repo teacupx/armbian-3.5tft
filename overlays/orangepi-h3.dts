@@ -24,7 +24,7 @@
 		__overlay__ {
 			// Set up pins
 			ili9486_pins: ili9486_pins {
-				allwinner,pins = "PA2", "PC7"; // Add DC/RS nad RST pins here
+				allwinner,pins = "PA2", "PC7"; // Add DC/RS and RST pins here
 				allwinner,function = "gpio_in";
 			};
 		ads7846_pins: ads7846_pins {
@@ -59,8 +59,8 @@
 				//              3rd number = DON'T CHANGE! (1 = ACTIVE_LOW, 0 = ACTIVE_HIGH)
 				// Example: PA2 = <&pio 0 2 1>
 				//          PC7 = <&pio 2 7 0>
-				reset-gpios = <&pio 0 2 1>; // RST pin
-				dc-gpios = <&pio 2 7 0>; // DC/RS pin
+				reset-gpios = <&pio 0 2 1>; // RST pin, 22
+				dc-gpios = <&pio 2 7 0>; // DC/RS pin, 18
 				debug = <0>;
 
 				init = <0x10000b0 0x00
@@ -84,9 +84,9 @@
 				pinctrl-names = "default";
 				pinctrl-0 = <&ads7846_pins>;
 				spi-max-frequency = <2000000>;
-				interrupts = <0 1 2>; /* PA1 IRQ_TYPE_EDGE_FALLING */
+				interrupts = <0 1 2>; /* PA1 IRQ_TYPE_EDGE_FALLING, pin 11 */
 				interrupt-parent = <&pio>;
-				pendown-gpio = <&pio 0 1 0>; /* PA1 */
+				pendown-gpio = <&pio 0 1 0>; /* PA1, pin 11 */
 				ti,x-min = /bits/ 16 <0>;
 				ti,y-min = /bits/ 16 <0>;
 				ti,x-max = /bits/ 16 <0x0FFF>;
@@ -98,7 +98,7 @@
 		};
 	};
 	__overrides__ {
-		speed = <&ili9486>,"spi-max-frquency:0";
+		speed = <&ili9486>,"spi-max-frequency:0";
 		txbuflen = <&ili9486>,"txbuflen:0";
 		rotate = <&ili9486>,"rotate:0";
 		fps = <&ili9486>,"fps:0";
