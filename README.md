@@ -26,7 +26,7 @@ param_spidev_spi_cs=1
 
 `sudo armbian-add-overlay overlays/<file>.dts`
 
-Where '<file>' is the most appropriate overlay for your device
+Where `<file>` is the most appropriate overlay for your device
 
 ### 3. Configure modules
 > Command:
